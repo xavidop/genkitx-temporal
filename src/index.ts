@@ -29,9 +29,9 @@ export {
 } from "./worker";
 
 export {
-  executeFlowWorkflow,
-  startFlowWorkflow,
-  type ExecuteFlowWorkflowOptions,
+  executeTemporalFlow,
+  startTemporalFlow,
+  type ExecuteTemporalFlowOptions,
 } from "./client";
 
 export { runGenkitFlowActivity, activities } from "./activities";

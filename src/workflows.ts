@@ -33,7 +33,7 @@ const { runGenkitFlowActivity } = proxyActivities<Activities>({
 /**
  * Generic workflow that executes a named Genkit flow registered in the
  * Worker's process. This is the entry-point used by
- * {@link executeFlowWorkflow}.
+ * {@link executeTemporalFlow}.
  */
 export async function runGenkitFlow(args: {
   flowName: string;

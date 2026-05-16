@@ -12,7 +12,7 @@ import { Client, Connection, type WorkflowHandle } from "@temporalio/client";
 import type { Action, z } from "genkit";
 import { getTemporalDefaults } from "./plugin";
 
-export interface ExecuteFlowWorkflowOptions {
+export interface ExecuteTemporalFlowOptions {
   address?: string;
   namespace?: string;
   taskQueue?: string;
@@ -39,7 +39,7 @@ export interface ExecuteFlowWorkflowOptions {
  * Callers that create a client get a `close` function back to release the
  * underlying connection.
  */
-async function resolveClient(options: ExecuteFlowWorkflowOptions): Promise<{
+async function resolveClient(options: ExecuteTemporalFlowOptions): Promise<{
   client: Client;
   close: () => Promise<void>;
 }> {
@@ -76,16 +76,16 @@ function flowName(flow: Action<z.ZodTypeAny, z.ZodTypeAny> | string): string {
  *
  * @example
  * ```ts
- * const result = await executeFlowWorkflow(jokeFlow, 'cats');
+ * const result = await executeTemporalFlow(jokeFlow, 'cats');
  * ```
  */
-export async function executeFlowWorkflow<
+export async function executeTemporalFlow<
   I extends z.ZodTypeAny,
   O extends z.ZodTypeAny,
 >(
   flow: Action<I, O> | string,
   input: I extends z.ZodTypeAny ? z.infer<I> : unknown,
-  options: ExecuteFlowWorkflowOptions = {},
+  options: ExecuteTemporalFlowOptions = {},
 ): Promise<O extends z.ZodTypeAny ? z.infer<O> : unknown> {
   const defaults = getTemporalDefaults();
   const name = flowName(flow as Action<z.ZodTypeAny, z.ZodTypeAny> | string);
@@ -114,13 +114,13 @@ export async function executeFlowWorkflow<
  * Lower-level helper: start a workflow without awaiting its result. Returns
  * the {@link WorkflowHandle} so the caller can signal/query/await it later.
  */
-export async function startFlowWorkflow<
+export async function startTemporalFlow<
   I extends z.ZodTypeAny,
   O extends z.ZodTypeAny,
 >(
   flow: Action<I, O> | string,
   input: I extends z.ZodTypeAny ? z.infer<I> : unknown,
-  options: ExecuteFlowWorkflowOptions = {},
+  options: ExecuteTemporalFlowOptions = {},
 ): Promise<WorkflowHandle> {
   const defaults = getTemporalDefaults();
   const name = flowName(flow as Action<z.ZodTypeAny, z.ZodTypeAny> | string);
