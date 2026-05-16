@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+      - next
+      - beta
+      - '*.x'
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    permissions:
+      contents: write       # to publish a GitHub release
+      issues: write         # to comment on released issues
+      pull-requests: write  # to comment on released PRs
+      id-token: write       # for OIDC npm provenance
+    name: release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          cache: npm
+          node-version: lts/*
+      - name: install
+        run: npm ci
+      - name: build
+        run: npm run build
+      - name: semantic-release
+        run: npx semantic-release@24
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

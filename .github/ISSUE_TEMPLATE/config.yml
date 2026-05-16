@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Genkit Community
+    url: https://github.com/firebase/genkit/discussions
+    about: For general Genkit questions please use the Genkit discussions.
+  - name: Temporal Community
+    url: https://community.temporal.io/
+    about: For general Temporal questions please use the Temporal forum.
