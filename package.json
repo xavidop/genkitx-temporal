@@ -1,0 +1,63 @@
+{
+  "name": "genkitx-temporal",
+  "version": "0.1.0",
+  "description": "Genkit plugin to deploy and run Genkit flows as Temporal Workflows.",
+  "keywords": [
+    "genkit",
+    "genkit-plugin",
+    "temporal",
+    "workflow",
+    "durable-execution",
+    "ai",
+    "genai"
+  ],
+  "author": "Xavier Portilla Edo",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xavidop/genkitx-temporal-js.git"
+  },
+  "type": "commonjs",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./workflows": {
+      "types": "./lib/workflows.d.ts",
+      "default": "./lib/workflows.js"
+    },
+    "./activities": {
+      "types": "./lib/activities.d.ts",
+      "default": "./lib/activities.js"
+    }
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf ./lib",
+    "build": "npm run clean && tsc",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@temporalio/activity": "^1.16.1",
+    "@temporalio/client": "^1.16.1",
+    "@temporalio/common": "^1.16.1",
+    "@temporalio/worker": "^1.16.1",
+    "@temporalio/workflow": "^1.16.1"
+  },
+  "peerDependencies": {
+    "genkit": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "genkit": "^1.0.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4"
+  }
+}
