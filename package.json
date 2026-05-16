@@ -15,7 +15,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xavidop/genkitx-temporal-js.git"
+    "url": "git+https://github.com/xavidop/genkitx-temporal.git"
   },
   "type": "commonjs",
   "main": "lib/index.js",
