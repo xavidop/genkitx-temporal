@@ -114,17 +114,17 @@ node ./dist/worker.js
 
 ```ts
 // client.ts
-import { executeFlowWorkflow } from 'genkitx-temporal';
+import { executeTemporalFlow } from 'genkitx-temporal';
 import { jokeFlow } from './flows';
 
-const result = await executeFlowWorkflow(jokeFlow, 'cats', {
+const result = await executeTemporalFlow(jokeFlow, 'cats', {
   taskQueue: 'my-queue',
 });
 console.log(result);
 ```
 
-`executeFlowWorkflow` starts a Temporal Workflow and waits for the result.
-For fire-and-forget / signalling, use `startFlowWorkflow` which returns the
+`executeTemporalFlow` starts a Temporal Workflow and waits for the result.
+For fire-and-forget / signalling, use `startTemporalFlow` which returns the
 raw `WorkflowHandle`.
 
 ## Configuration
@@ -167,9 +167,9 @@ export async function myOtherActivity(...) { /* ... */ }
 - `defineTemporalFlow(ai, config, fn)` — define a flow and register it for
   Temporal execution.
 - `startTemporalWorker(options?)` — start a Worker process.
-- `executeFlowWorkflow(flow, input, options?)` — run a flow inside a
+- `executeTemporalFlow(flow, input, options?)` — run a flow inside a
   Workflow and await the result.
-- `startFlowWorkflow(flow, input, options?)` — same but returns the
+- `startTemporalFlow(flow, input, options?)` — same but returns the
   `WorkflowHandle`.
 - `runGenkitFlowActivity` — the underlying activity (re-exported so you can
   combine it with your own activities).

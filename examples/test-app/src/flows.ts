@@ -25,7 +25,7 @@ export const ai = genkit({
 /**
  * Trivial flow: ask the LLM for a joke about the given subject.
  * Run it from the client with:
- *   await executeFlowWorkflow(jokeFlow, 'cats');
+ *   await executeTemporalFlow(jokeFlow, 'cats');
  */
 export const jokeFlow = defineTemporalFlow(
   ai,
