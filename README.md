@@ -2,7 +2,7 @@
 
 > Genkit plugin that runs Genkit flows as **Temporal Workflows** — giving
 > them durable execution, retries, timeouts, and visibility through the
-> Temporal UI.
+> Temporal UI
 
 ## Why?
 
