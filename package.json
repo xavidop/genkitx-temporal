@@ -56,7 +56,7 @@
     "genkit": ">=1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^25.9.1",
+    "@types/node": "^26.0.0",
     "genkit": "1.37.0",
     "rimraf": "^6.0.1",
     "typedoc": "^0.28.0",
