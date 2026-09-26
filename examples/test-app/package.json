@@ -16,7 +16,7 @@
     "@temporalio/client": "^1.16.1",
     "@temporalio/worker": "^1.16.1",
     "@temporalio/workflow": "^1.16.1",
-    "dotenv": "^17.4.2",
+    "dotenv": "^18.0.3",
     "genkit": "1.35.0",
     "genkitx-temporal": "file:../.."
   },
