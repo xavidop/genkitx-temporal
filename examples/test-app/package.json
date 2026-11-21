@@ -15,7 +15,7 @@
     "@genkit-ai/google-genai": "^1.44.0",
     "@temporalio/client": "^1.16.1",
     "@temporalio/worker": "^1.16.1",
-    "@temporalio/workflow": "^1.16.1",
+    "@temporalio/workflow": "^1.26.0",
     "dotenv": "^18.0.10",
     "genkit": "1.35.0",
     "genkitx-temporal": "file:../.."
