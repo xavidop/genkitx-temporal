@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@genkit-ai/google-genai": "^1.44.0",
-    "@temporalio/client": "^1.26.0",
+    "@temporalio/client": "^1.27.0",
     "@temporalio/worker": "^1.26.0",
     "@temporalio/workflow": "^1.16.1",
     "dotenv": "^18.0.10",
